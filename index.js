@@ -30,7 +30,18 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
-
+burger.discount = function(customer){
+  if (customer === "teacher" || customer === "student"){
+    return 18 * .75; 
+  } else if (customer === "public"){
+    return 18 * .9;
+  } else {
+    return "You pay full price!"
+  }
+}
+console.log(burger.discount("teacher"));
+console.log(burger.discount("public"));
+console.log(burger);
 
 ///////////////Reviews (MVP)///////////////////
 
@@ -43,7 +54,7 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
     {name:"Reyna", rating: 3.5, feedback: ""},
 ]
-
+// console.log(reviews(reviews.length - 1));
 /* Task 3: Console.log just Julius' feedback */
 
 console.log(reviews[5].feedback);
@@ -88,10 +99,10 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
-  } 
-
+function getLastReview(array) {
+  return `${array[array.length - 1].name} gave the restaurant a ${array[array.length - 1].rating} star review and their feedback was: ${array[array.length - 1].feedback}`;
+} 
+console.log(getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
@@ -107,7 +118,7 @@ function getLastReview(/* code here */) {
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
+ function getReviewByRating(array, rating) {
     /* code here */
   }
 
